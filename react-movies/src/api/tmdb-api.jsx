@@ -222,3 +222,5 @@ export const getMovieCredits = (id) => {
   throw error
 });
 };
+
+
