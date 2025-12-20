@@ -1,5 +1,5 @@
 import React from "react";
-import { getUpcomingMovies } from "../api/tmdb-api";
+import { getUpcomingMovies } from "../api/tmdb-api.jsx";
 import PageTemplate from '../components/templateMovieListPage';
 import { useQuery } from '@tanstack/react-query';
 import Spinner from '../components/spinner';
@@ -21,7 +21,7 @@ const UpcomingMoviesPage = () => {
   const favorites = movies.filter((m) => m.favorite);
   localStorage.setItem('favorites', JSON.stringify(favorites));
 
-  const addToPlaylist = (movieId) => true;
+  // const addToPlaylist = (movieId) => true;
 
   return (
     <PageTemplate
