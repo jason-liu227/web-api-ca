@@ -9,7 +9,7 @@ router.get('/discover', asyncHandler(async (req, res) => {
     res.status(200).json(discoverMovies);
 }));
 
-router.get('/movie/:id', asyncHandler(async(req, res) => {
+router.get('/:id', asyncHandler(async(req, res) => {
     const {id}= req.params;
     const movie = await getMovie(id);
      console.log('Backend received request for movie ID:', id);
