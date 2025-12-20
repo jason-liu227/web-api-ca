@@ -11,7 +11,7 @@ router.get('/', async (req, res) => {
     const users = await User.find();
     res.status(200).json(users);
 });
-
+ 
 router.post('/', asyncHandler(async (req, res) => {
     try {
         if (!req.body.username || !req.body.password) {
