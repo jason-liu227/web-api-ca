@@ -14,10 +14,7 @@ export const getMovies = () => {
   });
 };
 
-export const getMovie = (args) => {
-  //console.log(args)
-  const [, idPart] = args.queryKey;
-  const { id } = idPart;
+export const getMovie = (id) => {
   return fetch(
     `http://localhost:8080/api/movie/${id}`
   ).then((response) => {

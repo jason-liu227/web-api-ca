@@ -14,7 +14,7 @@ const MoviePage = () => {
 
   const {data: movie, error, isPending, isError} = useQuery({
     queryKey: ["movie", { id }],
-    queryFn: () => getMovie({ queryKey: ["movie", { id }] }),//gets id
+    queryFn: () => getMovie,//gets id
   });
 
   const {data: recData, error: recError, isPending: recPending, isError: recIsError} = useQuery({//for the above id, retrieves recommended movies
