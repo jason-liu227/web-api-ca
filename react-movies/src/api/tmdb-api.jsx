@@ -14,7 +14,7 @@ export const getMovies = () => {
   });
 };
 
-export const getMovie = ({queryKey}) => {
+export const getMovie = ({ queryKey }) => {
   const [, { id }] = queryKey;
   return fetch(
     `http://localhost:8080/api/movies/${id}`
@@ -50,10 +50,9 @@ export const getGenres = () => {
   };
 
 export const getMovieImages = ({ queryKey }) => {
-    const [, idPart] = queryKey;
-    const { id } = idPart;
-    return fetch(
-      `http://localhost:8080/api/movie/${id}/images`
+    const [, { id }] = queryKey;
+    return (
+      `http://localhost:8080/api/movies/${id}/images`
     ).then( (response) => {
       if (!response.ok) {
         return response.json().then((error) => {

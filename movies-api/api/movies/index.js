@@ -21,7 +21,7 @@ router.get('/upcoming', asyncHandler(async (req, res) => {
     res.status(200).json(upcomingMovies);
 }));
 
-router.get('/:id', asyncHandler(async(req, res) => {
+router.get('/movies/:id/images', asyncHandler(async(req, res) => {
     const {id}= req.params;
     const movieImages = await getMovieImages(id);
      console.log('Backend received request for movie ID:', id);
