@@ -9,7 +9,7 @@ router.get('/discover', asyncHandler(async (req, res) => {
     res.status(200).json(discoverMovies);
 }));
 
-router.get('/:id', asyncHandler(async(req, res) => {
+router.get('/:id', asyncHandler(async(req, res) => { //frontend doesnt work, backend does.
     const {id}= req.params;
     const movie = await getMovie(id);
      console.log('Backend received request for movie ID:', id);
@@ -21,7 +21,7 @@ router.get('/upcoming', asyncHandler(async (req, res) => {
     res.status(200).json(upcomingMovies);
 }));
 
-router.get('/movies/:id/images', asyncHandler(async(req, res) => {
+router.get('/movies/:id/images', asyncHandler(async(req, res) => {//frontend doesnt work
     const {id}= req.params;
     const movieImages = await getMovieImages(id);
      console.log('Backend received request for movie ID:', id);
@@ -33,12 +33,12 @@ router.get('/popular', asyncHandler(async (req, res) => {
     res.status(200).json(popularMovies);
 }));
 
-router.get('/topRated', asyncHandler(async (req, res) => {
+router.get('/topRated', asyncHandler(async (req, res) => {//attempted, not implemented
     const topRatedMovies = await getTopRatedMovies();
     res.status(200).json(topRatedMovies);
 }));
 
-router.get("/genres", asyncHandler(async (req, res) => {
+router.get("/genres", asyncHandler(async (req, res) => {//frontend doesnt work, not implemented
     const genres = await getGenres();
     res.status(200).json(genres);
 }));
