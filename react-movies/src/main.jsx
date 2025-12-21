@@ -38,10 +38,10 @@ const queryClient = new QueryClient({
 const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
-      <BrowserRouter>
-        <SiteHeader />
-        <AuthContextProvider>
+      <AuthContextProvider>
         <MoviesContextProvider>
+          <BrowserRouter>
+        <SiteHeader />
           <Routes>
             <Route path="/" element={<StartPage />} />
             <Route path="/signup" element={<SignupPage />} />
@@ -61,9 +61,9 @@ const App = () => {
             <Route path="/movies/playlist" element={<PlaylistMoviesPage />} />
             </Route>
           </Routes>
-        </MoviesContextProvider>
-        </AuthContextProvider>
       </BrowserRouter>
+      </MoviesContextProvider>
+        </AuthContextProvider>
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   );

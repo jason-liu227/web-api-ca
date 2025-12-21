@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext} from "react";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
@@ -7,11 +7,10 @@ import Button from "@mui/material/Button";
 import MenuIcon from "@mui/icons-material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
-import { useNavigate } from "react-router";
-import { styled } from "@mui/material/styles";
-import { useTheme } from "@mui/material/styles";
+import { styled, useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
-
+import { useNavigate, Link } from "react-router";
+import { AuthContext } from "../../contexts/authContext";
 
 const Offset = styled("div")(({ theme }) => theme.mixins.toolbar);
 
@@ -24,8 +23,11 @@ const SiteHeader = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
+   const context = useContext(AuthContext);
+
   const menuOptions = [
-    { label: "Home", path: "/" },
+    { label: "User", path: "/login" },
+    { label: "Home", path: "/discover" },
     { label: "Favorites", path: "/movies/favorites" },
     { label: "Playlist", path: "/movies/playlist" },
     { label: "Upcoming", path: "/movies/upcoming" },
@@ -160,6 +162,31 @@ const SiteHeader = () => {
 </div>
             </>
           )}
+          <Typography sx={{ ml: 2 }}>
+  {context.isAuthenticated ? (
+    <>
+      <span>Welcome {context.userName}! </span>
+      <Button
+        color="inherit"
+        onClick={() => context.signout()}
+        sx={{ ml: 1 }}
+      >
+        Sign out
+      </Button>
+    </>
+  ) : (
+    <>
+      <span>You are not logged in </span>
+      <Button
+        color="inherit"
+        onClick={() => navigate("/login")}
+        sx={{ ml: 1 }}
+      >
+        Login
+      </Button>
+    </>
+  )}
+</Typography>
         </Toolbar>
       </AppBar>
       <Offset />
