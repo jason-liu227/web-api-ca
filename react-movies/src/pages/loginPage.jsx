@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { Navigate, useLocation } from "react-router";
 import { AuthContext } from '../contexts/authContext';
 import { Link } from "react-router";
+import "../styles/css.css";
 
 const LoginPage = () => {
     const context = useContext(AuthContext);
@@ -23,6 +24,8 @@ const LoginPage = () => {
     }
 
     return (
+        <div className="auth-container">
+    <div className="auth-card">
         <>
             <h2>Login page</h2>
             <p>You must log in to view the protected pages </p>
@@ -37,6 +40,8 @@ const LoginPage = () => {
             <p>Not Registered?
                 <Link to="/signup">Sign Up!</Link></p>
         </>
+        </div>
+  </div>
     );
 };
 

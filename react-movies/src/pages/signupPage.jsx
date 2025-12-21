@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { Navigate } from "react-router";
 import { AuthContext } from '../contexts/authContext';
+import "../styles/css.css";
 
 const SignUpPage = () => {
   const context = useContext(AuthContext)
@@ -24,6 +25,8 @@ const SignUpPage = () => {
   }
 
   return (
+      <div className="auth-container">
+    <div className="auth-card">
     <>
       <h2>SignUp page</h2>
       <p>You must register a username and password to log in. Usernames must be unique and passwords must contain a minimum of 8 characters (with at least one uppercase letter, one lowercase letter, and one symbol). </p>
@@ -39,6 +42,8 @@ const SignUpPage = () => {
       {/* Login web form  */}
       <button onClick={register}>Register</button>
     </>
+    </div>
+  </div>
   );
 };
 

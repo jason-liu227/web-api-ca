@@ -26,7 +26,7 @@ const SiteHeader = () => {
    const context = useContext(AuthContext);
 
   const menuOptions = [
-    { label: "User", path: "/login" },
+    { label: "User", path: "/profile" },
     { label: "Home", path: "/discover" },
     { label: "Favorites", path: "/movies/favorites" },
     { label: "Playlist", path: "/movies/playlist" },
