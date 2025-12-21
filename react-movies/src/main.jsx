@@ -43,6 +43,7 @@ const App = () => {
           <BrowserRouter>
         <SiteHeader />
           <Routes>
+
             <Route path="/" element={<StartPage />} />
             <Route path="/signup" element={<SignupPage />} />
             <Route path="/profile" element={<ProfilePage />} />
@@ -59,6 +60,7 @@ const App = () => {
             <Route path="/movies/topRated" element={<TopRatedMoviesPage />} />
             <Route path="/movies/popular" element={<PopularMoviesPage/>} />
             <Route path="/movies/playlist" element={<PlaylistMoviesPage />} />
+            
             </Route>
           </Routes>
       </BrowserRouter>

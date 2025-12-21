@@ -8,7 +8,6 @@ export const getMovies = async () => {
     if (!response.ok) {
         throw new Error(response.json().message);
     }
-
     return await response.json();
 };
 
@@ -41,7 +40,6 @@ export const getUpcomingMovies = async () => {
     if (!response.ok) {
         throw new Error(response.json().message);
     }
-
     return await response.json();
 };
 
@@ -52,7 +50,6 @@ export const getPopularMovies = async () => {
     if (!response.ok) {
         throw new Error(response.json().message);
     }
-
     return await response.json();
 };
 

@@ -38,13 +38,10 @@ router.get('/topRated', asyncHandler(async (req, res) => {
     res.status(200).json(topRatedMovies);
 }));
 
-router.get(
-  "/genres",
-  asyncHandler(async (req, res) => {
+router.get("/genres", asyncHandler(async (req, res) => {
     const genres = await getGenres();
     res.status(200).json(genres);
-  })
-);
+}));
 
 
 export default router;
